@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>小宇宙科技播客 · 单集监测</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card: #ffffff;
+    --ink: #1c1e21;
+    --muted: #6b7280;
+    --line: #e5e7eb;
+    --accent: #0a7ea4;
+    --accent-soft: #e6f4f9;
+    --chip: #eef1f4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.6;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 40px 20px 80px; }
+  header h1 { font-size: 26px; font-weight: 700; letter-spacing: .5px; }
+  header p { color: var(--muted); font-size: 14px; margin-top: 6px; }
+  .stats { display: flex; gap: 24px; margin-top: 18px; flex-wrap: wrap; }
+  .stat b { font-size: 22px; display: block; }
+  .stat span { font-size: 12px; color: var(--muted); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 26px 0 8px; }
+  .chip {
+    border: 1px solid var(--line); background: var(--chip);
+    border-radius: 999px; padding: 5px 14px; font-size: 13px;
+    cursor: pointer; user-select: none; transition: all .15s;
+  }
+  .chip.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .day { margin-top: 28px; }
+  .day h2 {
+    font-size: 15px; color: var(--muted); font-weight: 600;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .day h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+  .card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px;
+    padding: 16px 18px; margin-top: 12px; transition: box-shadow .15s;
+  }
+  .card:hover { box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+  .card h3 { font-size: 16px; font-weight: 600; }
+  .card h3 a { color: var(--ink); text-decoration: none; }
+  .card h3 a:hover { color: var(--accent); }
+  .meta { display: flex; align-items: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+  .tag {
+    background: var(--accent-soft); color: var(--accent);
+    font-size: 12px; font-weight: 600; padding: 2px 10px; border-radius: 6px;
+  }
+  .meta .extra { font-size: 12px; color: var(--muted); }
+  .src { font-size: 12px; color: var(--muted); text-decoration: none; }
+  .src:hover { text-decoration: underline; }
+  .summary { font-size: 13.5px; color: #374151; margin-top: 10px; }
+  footer { margin-top: 48px; text-align: center; color: var(--muted); font-size: 12.5px; }
+  .empty { text-align: center; color: var(--muted); padding: 60px 0; }
+  .loading { text-align: center; color: var(--muted); padding: 60px 0; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🎧 小宇宙科技播客 · 单集监测</h1>
+    <p id="updated">自动监测：硅谷101 / 声动早咖啡 / What's Next｜科技早知道 / 商业就是这样 / 疯投圈 / 硬地骇客 / 晚点聊 LateTalk / 乱翻书 / 三五环 / 代码之外 Beyond Code / OnBoard! / 张小珺Jùn｜商业访谈录</p>
+    <div class="stats">
+      <div class="stat"><b id="statTotal">–</b><span>收录单集</span></div>
+      <div class="stat"><b id="statChannels">–</b><span>监测频道</span></div>
+      <div class="stat"><b id="statLast">–</b><span>最近更新</span></div>
+    </div>
+  </header>
+
+  <div class="chips" id="chips"></div>
+
+  <main id="list">
+    <div class="loading">加载中…</div>
+  </main>
+
+  <footer>本页面由豆包定时任务每天自动更新 · 数据来源以各单集卡片标注为准</footer>
+</div>
+
+<script>
+(async function () {
+  var listEl = document.getElementById('list');
+  var data;
+  try {
+    var res = await fetch('episodes.json', { cache: 'no-store' });
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    data = await res.json();
+  } catch (e) {
+    listEl.innerHTML = '<div class="empty">数据加载失败，请稍后刷新重试。</div>';
+    return;
+  }
+
+  var episodes = data.episodes || [];
+  var channels = [];
+  var channelSet = {};
+  episodes.forEach(function (v) {
+    if (!channelSet[v.channel]) { channelSet[v.channel] = true; channels.push(v.channel); }
+  });
+  channels.sort();
+
+  document.getElementById('statTotal').textContent = episodes.length;
+  document.getElementById('statChannels').textContent = channels.length;
+  document.getElementById('statLast').textContent = (data.updated_at || '').slice(0, 10);
+
+  var chipsEl = document.getElementById('chips');
+  function makeChip(label, active) {
+    var c = document.createElement('span');
+    c.className = 'chip' + (active ? ' active' : '');
+    c.textContent = label;
+    return c;
+  }
+  var allChip = makeChip('全部', true);
+  chipsEl.appendChild(allChip);
+  var chipMap = {};
+  channels.forEach(function (ch) {
+    var c = makeChip(ch, false);
+    chipsEl.appendChild(c);
+    chipMap[ch] = c;
+  });
+
+  var activeFilter = null;
+
+  function render() {
+    var filtered = episodes;
+    if (activeFilter) filtered = episodes.filter(function (v) { return v.channel === activeFilter; });
+    filtered = filtered.slice().sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+
+    var groups = {};
+    var order = [];
+    filtered.forEach(function (v) {
+      if (!groups[v.date]) { groups[v.date] = []; order.push(v.date); }
+      groups[v.date].push(v);
+    });
+
+    listEl.innerHTML = '';
+    if (order.length === 0) {
+      listEl.innerHTML = '<div class="empty">该频道暂无收录单集。</div>';
+      return;
+    }
+    order.forEach(function (d) {
+      var sec = document.createElement('section');
+      sec.className = 'day';
+      var h = document.createElement('h2');
+      h.textContent = d;
+      sec.appendChild(h);
+      groups[d].forEach(function (v) {
+        var card = document.createElement('div');
+        card.className = 'card';
+
+        var h3 = document.createElement('h3');
+        var a = document.createElement('a');
+        a.href = v.url; a.target = '_blank'; a.rel = 'noopener noreferrer';
+        a.textContent = v.title;
+        h3.appendChild(a);
+
+        var meta = document.createElement('div');
+        meta.className = 'meta';
+        var tag = document.createElement('span');
+        tag.className = 'tag';
+        tag.textContent = v.channel;
+        meta.appendChild(tag);
+        if (v.duration_min) {
+          var dur = document.createElement('span');
+          dur.className = 'extra';
+          dur.textContent = '时长 ' + v.duration_min + ' 分钟';
+          meta.appendChild(dur);
+        }
+        if (v.play_count) {
+          var pc = document.createElement('span');
+          pc.className = 'extra';
+          pc.textContent = '播放 ' + v.play_count.toLocaleString();
+          meta.appendChild(pc);
+        }
+        if (v.source && v.source !== v.url) {
+          var s = document.createElement('a');
+          s.className = 'src';
+          s.href = v.source; s.target = '_blank'; s.rel = 'noopener noreferrer';
+          s.textContent = '来源';
+          meta.appendChild(s);
+        }
+
+        card.appendChild(h3);
+        card.appendChild(meta);
+        if (v.summary) {
+          var p = document.createElement('p');
+          p.className = 'summary';
+          p.textContent = v.summary;
+          card.appendChild(p);
+        }
+        sec.appendChild(card);
+      });
+      listEl.appendChild(sec);
+    });
+  }
+
+  allChip.addEventListener('click', function () {
+    activeFilter = null;
+    Object.keys(chipMap).forEach(function (k) { chipMap[k].classList.remove('active'); });
+    allChip.classList.add('active');
+    render();
+  });
+  channels.forEach(function (ch) {
+    chipMap[ch].addEventListener('click', function () {
+      activeFilter = ch;
+      allChip.classList.remove('active');
+      Object.keys(chipMap).forEach(function (k) {
+        chipMap[k].classList.toggle('active', k === ch);
+      });
+      render();
+    });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
