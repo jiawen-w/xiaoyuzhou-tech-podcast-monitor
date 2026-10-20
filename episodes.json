@@ -1,6 +1,16 @@
 {
-  "updated_at": "2026-10-19T09:34:07+08:00",
+  "updated_at": "2026-10-20T09:37:34+08:00",
   "episodes": [
+    {
+      "title": "E256｜Agent、机器人与制药，谁先被GPT-6 Astra改写？",
+      "channel": "硅谷101",
+      "date": "2026-10-19",
+      "duration_min": 80,
+      "play_count": 3927,
+      "url": "https://www.xiaoyuzhoufm.com/episode/6ad6a22b336a696d21590ba6",
+      "summary": "回顾9月，AI圈的重磅新闻一个接一个。 先是OpenAI发布GPT-6 Astra，总裁格雷格·布罗克曼在发布会上宣布：AGI已经到来。 这场发布对机器人行业的冲击，来得有些意外，一个发布会报告里只字未提机器人的通用模型，转身就空降了机器人评测榜首，甚至让很多机器人的Benchmark都失效了。有人开玩笑说：机器人领域等了这么多年的“GPT时刻”，居然是GP…",
+      "source": "https://www.xiaoyuzhoufm.com/podcast/5e5c52c9418a84a04625e6cc"
+    },
     {
       "title": "E255｜模型越来越强，为什么用户没感觉？再访阿里国际站总裁张阔",
       "channel": "硅谷101",
@@ -30,6 +40,16 @@
       "url": "https://www.xiaoyuzhoufm.com/episode/6ab9d38f863c97e2d31452df",
       "summary": "随着AI模型能力提升，训练需求更复杂，一批为模型公司提供训练数据的新公司正在快速增长：AfterQuery今年4月宣布A轮融资时，估值为3亿美元，到了9月，据媒体报道，新一轮融资已经将其估值推至32亿美元。另一家提供训练数据与智能体环境的公司Bespoke Labs，也在今年7月宣布，种子轮与A轮融资合计达到4000万美元。 虽然估值水涨船高，AI数据行业对…",
       "source": "https://www.xiaoyuzhoufm.com/podcast/5e5c52c9418a84a04625e6cc"
+    },
+    {
+      "title": "千余家影院直播体育赛事，上半年国内金饰消费量下跌三成",
+      "channel": "声动早咖啡",
+      "date": "2026-10-19",
+      "duration_min": 11,
+      "play_count": 63629,
+      "url": "https://www.xiaoyuzhoufm.com/episode/6ad625fd66729f5c712df259",
+      "summary": "两部门发文鼓励影院空闲时段直播重大体育赛事，一个重要背景就是电影行业复苏乏力。 高金价下，消费者对金饰的热情没有减退，而是转向了低克重的金饰，也推高了整体消费金额。 此外，你会听到更多与日常生活息息相关的商业科技动态： * 电商平台双十一用 AI 挖掘新需求 * 卡地亚母公司考虑竞购戴比尔斯 * 北京马拉松参赛规模创新高 还有腾讯、理想汽车、比亚迪和汇源集团…",
+      "source": "https://www.xiaoyuzhoufm.com/podcast/60de7c003dd577b40d5a40f3"
     },
     {
       "title": "海外航司纷纷拥抱星链，免费 Wi-Fi 为何逐渐成为航司新标配？",
