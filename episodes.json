@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T09:50:35+08:00",
+  "updated_at": "2026-10-22T09:48:22+08:00",
   "episodes": [
     {
       "title": "E256｜Agent、机器人与制药，谁先被GPT-6 Astra改写？",
@@ -40,6 +40,16 @@
       "url": "https://www.xiaoyuzhoufm.com/episode/6ab9d38f863c97e2d31452df",
       "summary": "随着AI模型能力提升，训练需求更复杂，一批为模型公司提供训练数据的新公司正在快速增长：AfterQuery今年4月宣布A轮融资时，估值为3亿美元，到了9月，据媒体报道，新一轮融资已经将其估值推至32亿美元。另一家提供训练数据与智能体环境的公司Bespoke Labs，也在今年7月宣布，种子轮与A轮融资合计达到4000万美元。 虽然估值水涨船高，AI数据行业对…",
       "source": "https://www.xiaoyuzhoufm.com/podcast/5e5c52c9418a84a04625e6cc"
+    },
+    {
+      "title": "低价城际大巴吸引乘客，AI 短剧算力用量引发争议",
+      "channel": "声动早咖啡",
+      "date": "2026-10-21",
+      "duration_min": 11,
+      "play_count": 65304,
+      "url": "https://www.xiaoyuzhoufm.com/episode/6ad8c67db381c0fcba19b2d0",
+      "summary": "珠三角这些新型大巴的线路，减少了对传统汽车站的依赖，把上下车的地点分散到多个站点。 对于「国内一半算力用来制作短剧」的说法，字节表示，总算力中，大约 10% 用于视频生成模型的训练和推理。 此外，你会听到更多与日常生活息息相关的商业科技动态： * SpaceX 的 AI 相关收入过半 * 问界出海将采用博世方案 * DeepSeek 开源模型运行框架 还有奈…",
+      "source": "https://www.xiaoyuzhoufm.com/podcast/60de7c003dd577b40d5a40f3"
     },
     {
       "title": "欧洲青旅一边关店一边扩张，这门生意发生了什么改变？",
@@ -130,6 +140,16 @@
       "url": "https://www.xiaoyuzhoufm.com/episode/6aad1c5d0916f6f8b44567d1",
       "summary": "十年前，Snap 推出第一代 Spectacles。售价 129.99 美元、造型鲜艳、通过黄色自动售货机 Snapbot 限量销售，Evan Spiegel 甚至把它称作一个「toy」。十年后，Spectacles 变成了 SPECS，价格涨到 2195 美元，Snap 也不再满足于把一台相机戴到人脸上，而是想把它变成一台真正的空间计算机。 今年的 SPE…",
       "source": "https://www.xiaoyuzhoufm.com/podcast/5e74b52c418a84a046ecaceb"
+    },
+    {
+      "title": "Vol.278 为什么银行门口会有石狮子？",
+      "channel": "商业就是这样",
+      "date": "2026-10-21",
+      "duration_min": 48,
+      "play_count": 5130,
+      "url": "https://www.xiaoyuzhoufm.com/episode/6ad8b6c8ef67611cac7a1222",
+      "summary": "由于难以概括本期节目的诸多细节及诡异（？）之处，就不剧透了。 | 主播 | 肖文杰、约小亚 | 延伸资料 | Roaring to Life - HSBC History Exhibition - HSBC History Luke Him Sau, Architect: China's Missing Modern 唐永余-汇丰银行铜狮子流转始末 Tool…",
+      "source": "https://www.xiaoyuzhoufm.com/podcast/6022a180ef5fdaddc30bb101"
     },
     {
       "title": "商业小样51 | 为什么办公椅越贵，对老板反而越合算？",
