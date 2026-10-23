@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T09:48:22+08:00",
+  "updated_at": "2026-10-23T09:31:53+08:00",
   "episodes": [
     {
       "title": "E256｜Agent、机器人与制药，谁先被GPT-6 Astra改写？",
@@ -40,6 +40,16 @@
       "url": "https://www.xiaoyuzhoufm.com/episode/6ab9d38f863c97e2d31452df",
       "summary": "随着AI模型能力提升，训练需求更复杂，一批为模型公司提供训练数据的新公司正在快速增长：AfterQuery今年4月宣布A轮融资时，估值为3亿美元，到了9月，据媒体报道，新一轮融资已经将其估值推至32亿美元。另一家提供训练数据与智能体环境的公司Bespoke Labs，也在今年7月宣布，种子轮与A轮融资合计达到4000万美元。 虽然估值水涨船高，AI数据行业对…",
       "source": "https://www.xiaoyuzhoufm.com/podcast/5e5c52c9418a84a04625e6cc"
+    },
+    {
+      "title": "咖啡豆｜山姆限购、黄牛加价，开心果为什么变得紧俏？",
+      "channel": "声动早咖啡",
+      "date": "2026-10-22",
+      "duration_min": 15,
+      "play_count": 61682,
+      "url": "https://www.xiaoyuzhoufm.com/episode/6ada1bffc96c8942ec10c3e9",
+      "summary": "除了山姆目前对开心果有限购措施，另外一家会员制超市 Costco（开市客）也在收紧顾客的购买数量。根据市场机构 Expana 的数据，从 2023 年底到今年 3 月，两年多时间里，美国开心果的基准价格上涨了大约 30%，达到每磅 4.57 美元，是近 8 年来的最高水平。开心果的价格为什么会在最近几年明显走高？本期的咖啡豆回复就与之相关 [06:15]。你…",
+      "source": "https://www.xiaoyuzhoufm.com/podcast/60de7c003dd577b40d5a40f3"
     },
     {
       "title": "低价城际大巴吸引乘客，AI 短剧算力用量引发争议",
@@ -110,6 +120,16 @@
       "url": "https://www.xiaoyuzhoufm.com/episode/6ace3e8b195d838e2af160f7",
       "summary": "连锁烧烤品牌——很久以前羊肉串，在最近完成了股份制改革，还调整了高管，可能会加快上市进程。不过，这个品牌从第一家店开业到现在已经有 18 年的时间，目前在全国还只有 150 家左右的直营门店。在烧烤行业，靠加盟扩张的疯狂烤翅、串意十足也只有 400 多家门店。相比起来，火锅行业里已经有多家像海底捞一样，门店超过 1000 家的品牌。为什么同样适合聚餐，烧烤连…",
       "source": "https://www.xiaoyuzhoufm.com/podcast/60de7c003dd577b40d5a40f3"
+    },
+    {
+      "title": "从免费披萨到订错机票：硅谷创业者正在解决 Agent 的哪些麻烦？ | 硅谷线下活动 S10E33",
+      "channel": "What's Next｜科技早知道",
+      "date": "2026-10-22",
+      "duration_min": 36,
+      "play_count": 2534,
+      "url": "https://www.xiaoyuzhoufm.com/episode/6ad9f1ad97726cd467561fa2",
+      "summary": "最近几个月，像 Meta 的 Muse，OpenAI 的 Dots 这样的 Personal agent 产品大火。模型不仅越来越擅长调用工具、规划任务，也开始能够执行数百甚至上千个步骤的复杂工作。但当 AI 真正进入现实世界，问题也随之出现：订错机票怎么办？执行到一半忘记了原本的任务怎么办？如果 Agent 需要使用你的邮箱、银行卡和个人数据，我们又该如何…",
+      "source": "https://www.xiaoyuzhoufm.com/podcast/5e74b52c418a84a046ecaceb"
     },
     {
       "title": "用光调控神经细胞：今年诺贝尔奖如何改变我们对情绪的理解？ | 串台「声东击西」S10E32",
